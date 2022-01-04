@@ -13,13 +13,12 @@
 // @grant       GM_listValues
 // @grant       GM_deleteValue
 // @grant       GM_addStyle
-// @icon        https://image.noelshack.com/fichiers/2022/01/2/1641320497-jv-antiboucle.png
+// @icon        https://i.imgur.com/BuDsWpM.png
 // @author      Jyren
 // @noframes
 // ==/UserScript==
 
-// relique du script JVBalance...
-// GM_addStyle('.picto-msg-balance {background:url("http://image.noelshack.com/fichiers/2017/07/1486986675-button-balancer.png") 0 0 no-repeat;display:inline-block;width:16px;height:16px;}.picto-msg-balance span {position:absolute;top:0;left:-999em;}#antiboucle-box-info {width:400px;height:50%;background-color:#fff;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;display:none;z-index:9999;padding:15px 10px;box-shadow:0px 0px 15px 0px #ccc;border-radius:7px;}#antiboucle-close-box {position:absolute;top:0;right:5px;}#antiboucle-overlay {z-index:9998;background-color:#000;opacity:0.5;position:fixed;top:0;right:0;width:100%;height:100%;display:none;}#list-tags {width:100%;}#antiboucle-tags {display:none;}');
+GM_addStyle('/* .picto-msg-balance {background:url("http://image.noelshack.com/fichiers/2017/07/1486986675-button-balancer.png") 0 0 no-repeat;display:inline-block;width:16px;height:16px;}.picto-msg-balance span {position:absolute;top:0;left:-999em;} */ #antiboucle-box-info {width:400px;height:50%;background-color:#fff;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;display:none;z-index:9999;padding:15px 10px;box-shadow:0px 0px 15px 0px #ccc;border-radius:7px;}#antiboucle-close-box {position:absolute;top:0;right:5px;}#antiboucle-overlay {z-index:9998;background-color:#000;opacity:0.5;position:fixed;top:0;right:0;width:100%;height:100%;display:none;}#list-tags {width:100%;}#antiboucle-tags {display:none;}');
 
 this.$ = this.jQuery = jQuery.noConflict(true);
 
@@ -69,7 +68,7 @@ $(document).ready(function(){
 		$('#antiboucle-overlay').css('display', 'block');
 		return false;
 	});
-	$('#antiboucle-close-box').on('click',function(e){
+	$('#antiboucle-close-box, #antiboucle-overlay').on('click',function(e){
 		e.preventDefault();
 		$('#antiboucle-box-info').css('display', 'none');
 		$('#antiboucle-overlay').css('display', 'none');
@@ -90,7 +89,7 @@ $(document).ready(function(){
 	if(tags.length>0) {
 		var regexp = new RegExp(tags.join('|'), 'gi');
 
-		if(GM_getValue("filterlinksonly")=='checked') {
+		if(GM_getValue("filterlinksonly") == 'checked') {
 			$('.bloc-message-forum').each(function(index){
 				var Post = $(this);
 				var PostContent = $(this).children('.conteneur-message').children('.inner-head-content').children('.bloc-contenu').children('.txt-msg');

@@ -13,7 +13,7 @@
 // @grant       GM_listValues
 // @grant       GM_deleteValue
 // @grant       GM_addStyle
-// @icon        https://image.noelshack.com/fichiers/2022/01/2/1641320497-jv-antiboucle.png
+// @icon        https://i.imgur.com/BuDsWpM.png
 // @author      Jyren
 // @noframes
 // ==/UserScript==
