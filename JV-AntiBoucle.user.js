@@ -4,7 +4,7 @@
 // @description Efface les messages contenant les liens et mots-clés Boucle des forums.
 // @include     http*://www.jeuxvideo.com/forums/42-*
 // @include     http*://www.jeuxvideo.com/forums/0-*
-// @version     1.0.2
+// @version     1.0.3
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @updateURL   https://raw.githubusercontent.com/Saberdream/JV-AntiBoucle/main/JV-AntiBoucle.meta.js
 // @downloadURL https://raw.githubusercontent.com/Saberdream/JV-AntiBoucle/main/JV-AntiBoucle.user.js
